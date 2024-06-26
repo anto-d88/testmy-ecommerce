@@ -59,6 +59,6 @@ app.use(commandeRoutes);
 //app.use(paymentRoutes);
 
 // Démarrer le serveur
-app.listen(PORT, PORT2, () => {
+app.listen(PORT, () => {
   console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
 });
