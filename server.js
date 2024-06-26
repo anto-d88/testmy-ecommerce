@@ -6,7 +6,7 @@ const session = require('express-session');
 const memorystore = require("memorystore")(session);
 //const Stripe = require('stripe');
 const app = express();
-const PORT = process.env.PORT || 3306;
+const PORT = process.env.PORT || 3306; 
 
 
 // Configurer Stripe
@@ -43,7 +43,7 @@ app.use(session({
   database: 'ecommerce'
 });*/
 
-// Importer et utiliser les routes
+// Importer et utiliser les routes///
 const authRoutes = require('./routes/auth');
 const historyRoutes = require('./routes/historys');
 const accueilRoutes = require('./routes/index');
