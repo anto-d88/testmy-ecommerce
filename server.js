@@ -3,7 +3,7 @@ const path = require('path');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const session = require('express-session');
-//const memorystore = require("memorystore")(session);
+const memorystore = require("memorystore")(session);
 //const Stripe = require('stripe');
 const app = express();
 const PORT = 3306; 
@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Configurer les sessions
-/*app.use(session({
+app.use(session({
   cookie: { maxAge: 86400000 },
     store: new memorystore({
       checkPeriod: 86400000 // prune expired entries every 24h
@@ -33,7 +33,7 @@ app.use(express.json());
   secret: 'votre_secret',
   resave: false,
   saveUninitialized: false
-}));*/
+}));
 
 // Créer une connexion à la base de données MySQL
 /*const connection = mysql.createConnection({
