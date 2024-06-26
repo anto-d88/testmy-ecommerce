@@ -1,0 +1,21 @@
+.boximgheader{
+    width: 100%;
+    img{
+        width: 100%;
+    }
+}
+.article01{
+    padding: 10%;
+}
+.boximgbody{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    img{
+        margin: auto;
+        margin-bottom: 10vh;
+        width: 60%;
+
+    }
+    
+}

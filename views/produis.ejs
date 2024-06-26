@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-Commerce</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="./sass/main.css">
+</head>
+<body>
+    <header>
+        
+        <div id="mySidenav" class="sidenav">
+          <a id="closeBtn" href="#" class="close">×</a>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="#">A propos</a></li>
+            <li><a href="/produis">Nos produits</a></li>
+            <li><a href="#">Témoignages</a></li>
+            <li><a href="#">Contact</a></li>
+        <% if (!user) { %>
+            <li><a href="/register">Nous rejoindre</a></li>
+            <li><a href="/login">Connection</a> </li>
+        <% } else { %>
+            <li></li><a href="/logout">Déconnexion</a></li>
+                    <% } %> 
+                
+        
+          </ul>
+        </div>
+        
+    <section class="boxburgericon">  
+        <a href="#" id="openBtn">
+          <span class="burger-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </a>
+      </section>  
+       <section class="boxtextheader"> <% if (user) { %>
+            <h3 class="nomutilisateur">Bienvenue, <%= user.username %>! </h3>
+        <% } %> </section>
+      </header>
+      <main>
+        <section class="boximgheader">
+          <img src="./img/imgmaquette01.jpg" alt="image maquette ! ">
+        </section>
+        <article class="article01">
+          <h1>TITRE</h1>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+        </article>
+        <section class="nboximgbody">
+            <h1>Produits</h1>
+            <div id="products">
+                <% products.forEach(product => { %>
+                    <div class="product">
+                        <h2><%= product.name %></h2>
+                        <p>Prix: <%= product.price %>€</p>
+                        <p><%= product.description %></p>
+                        <button onclick="addToCart(<%= product.id %>)">Ajouter au panier</button>
+                    </div>
+                    <% }); %>
+                </div>
+                <h2>Panier</h2>
+                <div id="cart"></div>
+        </section>
+        <article class="article01">
+          <h1>TITRE</h1>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. </p>
+        </article>
+    
+      <section id="donnéesmysql"></section>
+      </main>
+      <footer>
+      </footer>
+   
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/script.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>

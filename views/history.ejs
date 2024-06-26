@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire de la Spiruline</title>
+    <link rel="stylesheet" href="stylehistory.css">
+    <link rel="stylesheet" href="./sass/main.css">
+</head>
+<body>
+    <header>
+        <div id="mySidenav" class="sidenav">
+            <a id="closeBtn" href="#" class="close">×</a>
+            <ul>
+              <li><a href="/">Accueil</a></li>
+              <li><a href="#">A propos</a></li>
+              <li><a href="/produis">Nos produits</a></li>
+              <li><a href="#">Témoignages</a></li>
+              <li><a href="#">Contact</a></li>
+          <% if (!user) { %>
+              <li><a href="/register">Nous rejoindre</a></li>
+              <li><a href="/login">Connection</a> </li>
+          <% } else { %>
+              <li><a href="/logout">Déconnexion</a></li>
+                      <% } %> 
+                  
+          
+            </ul>
+          </div>
+          
+      <section class="boxburgericon">  
+          <a href="#" id="openBtn">
+            <span class="burger-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </a>
+        </section>  
+         <section class="boxtextheader"> <% if (user) { %>
+              <h3 class="nomutilisateur">Bienvenue, <%= user.username %>! </h3>
+          <% } %> </section>
+        </header>
+        <main>
+        <h1>L'Histoire de la Spiruline</h1>
+        <img src="spirulina_header.jpg" alt="Image de spiruline" class="header-img">
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>La spiruline est une cyanobactérie qui est consommée comme supplément alimentaire pour ses nombreux bienfaits sur la santé.</p>
+            <img src="spirulina_intro.jpg" alt="Spiruline en poudre" class="content-img">
+        </section>
+        <section id="histoire">
+            <h2>Histoire</h2>
+            <p>La spiruline est consommée depuis des siècles par différentes cultures à travers le monde. Elle était utilisée par les Aztèques et d'autres peuples mésoaméricains comme source de nourriture riche en protéines.</p>
+            <img src="spirulina_history.jpg" alt="Spiruline dans l'histoire" class="content-img">
+        </section>
+        <section id="bienfaits">
+            <h2>Bienfaits</h2>
+            <p>La spiruline est riche en protéines, vitamines, minéraux et antioxydants. Elle est connue pour ses propriétés anti-inflammatoires et son soutien au système immunitaire.</p>
+            <img src="spirulina_benefits.jpg" alt="Bienfaits de la spiruline" class="content-img">
+        </section>
+        <button id="moreInfoBtn">En savoir plus</button>
+        <section id="moreInfo" style="display:none;">
+            <h2>Plus d'informations</h2>
+            <p>La spiruline est également utilisée dans la lutte contre la malnutrition dans diverses régions du monde grâce à sa teneur élevée en nutriments.</p>
+            <img src="spirulina_moreinfo.jpg" alt="Plus d'informations sur la spiruline" class="content-img">
+        </section>
+    </main>
+   <!-- <footer>
+        <p>&copy; 2024 Histoire de la Spiruline</p>
+    </footer>-->
+    <script src="scripthistory.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>
