@@ -6,7 +6,7 @@ const session = require('express-session');
 const memorystore = require("memorystore")(session);
 //const Stripe = require('stripe');
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 
 // Configurer Stripe
