@@ -6,7 +6,7 @@ const session = require('express-session');
 const memorystore = require("memorystore")(session);
 //const Stripe = require('stripe');
 const app = express();
-const PORT = process.env.PORT || 3306; 
+const port = process.env.PORT || 3306; 
 
 
 // Configurer Stripe
@@ -59,6 +59,6 @@ app.use(commandeRoutes);
 //app.use(paymentRoutes);
 
 // Démarrer le serveur
-app.listen(PORT, () => {
-  console.log(`Serveur en cours d'exécution sur http://localhost:${PORT}`);
+app.listen(port, () => {
+  console.log(`Serveur en cours d'exécution sur http://localhost:${port}`);
 });
