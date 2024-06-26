@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
-const session = require('express-session');
+//const session = require('express-session');
 //const Stripe = require('stripe');
 const app = express();
 const PORT = 3000;
@@ -24,11 +24,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Configurer les sessions
-app.use(session({
+/*app.use(session({
   secret: 'votre_secret',
   resave: false,
   saveUninitialized: false
-}));
+}));*/
 
 // Créer une connexion à la base de données MySQL
 /*const connection = mysql.createConnection({
